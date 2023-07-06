@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    {% load static %}
+    <link rel="icon" href="{% static '/images/iconohuella.png' %}">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Braah+One&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/93aa3dd841.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static '/../style.css %}">
+    <script src="{% static 'app.js' %}"></script>
+
+    <title>Python Pets</title>
+</head>
+
+<header>
+    <nav> 
+        <ul>
+            <li><img id="logo" src="{% static 'images/logo.png' %}" /></li>
+            <li style="margin-right: 100px">
+                <h4>Python Pets</h4>
+            </li>
+            <!-- <li><a class="active" href="/index.html">Inicio</a></li>
+            <li><a href="/nosotros.html">Nosotros</a></li>
+            <li><a href="/productos.html">Productos</a></l>
+            <li><a href="/contacto.html">Contacto</a></li> -->
+            <li style="margin-left: 200px"><button onclick="carrito()">Carrito</button></li>
+            <li><button onclick="ingresar()">Ingresar</button>  </li>
+        </ul>
+    </nav>
+</header>
+
+{% block content %}{% endblock %}
+
+<footer> 
+    <p> Copyright (c) 2023 - Todos los derechos reservados - Python Pets</p>
+</footer>
+
+</html>
