@@ -3,7 +3,7 @@ from django.template import loader
 
 
 def home (request):
-    return render(request, "home.html")
+    return render(request, "index.html")
 
 def nosotros (request):
     return render(request, "nosotros.html")

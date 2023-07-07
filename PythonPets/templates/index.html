@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<body>
+    <div class="slide">
+        <div class="slide-inner">
+            <input class="slide-open" type="radio" id="slide-1" 
+                  name="slide" aria-hidden="true" hidden="" checked="checked">
+            <div class="slide-item">
+                <img src="static/images/1.png">
+            </div>
+            <input class="slide-open" type="radio" id="slide-2" 
+                  name="slide" aria-hidden="true" hidden="">
+            <div class="slide-item">
+                <img src="static/images/2.png">
+            </div>
+            <input class="slide-open" type="radio" id="slide-3" 
+                  name="slide" aria-hidden="true" hidden="">
+            <div class="slide-item">
+                <img src="static/images/3.png">
+            </div>
+            <label for="slide-3" class="slide-control prev control-1">‹</label>
+            <label for="slide-2" class="slide-control next control-1">›</label>
+            <label for="slide-1" class="slide-control prev control-2">‹</label>
+            <label for="slide-3" class="slide-control next control-2">›</label>
+            <label for="slide-2" class="slide-control prev control-3">‹</label>
+            <label for="slide-1" class="slide-control next control-3">›</label>
+            <ol class="slide-indicador">
+                <li>
+                    <label for="slide-1" class="slide-circulo">•</label>
+                </li>
+                <li>
+                    <label for="slide-2" class="slide-circulo">•</label>
+                </li>
+                <li>
+                    <label for="slide-3" class="slide-circulo">•</label>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <div>
+        <br>
+        <hr>
+        <h1> Nuestros servicios</h1>
+        <hr>
+        <div class="gridcontainer"> <!-- contenedor -->
+            <div class="item item-1">
+                <h2>Peluqueria</h2>
+                <img src="static/images/servicio1.jpg" id="img1">
+            </div> <!-- cada uno de los ítems del grid -->
+            <div class="item item-2">
+                <h2>Alimento</h2>
+                <img src="static/images/servicio2.jpg" id="img2">
+            </div>
+            <div class="item item-3">
+                <h2>Accesorios</h2>
+                <img src="static/images/fondodurazno.jpeg" id="img2">
+            </div>
+            <div class="item item-4">
+                <h2>Veterinaria</h2>
+                <img src="static/images/servicio3.jpg" id="img1">
+                </div>
+          </div>
+    </div>
+    <div>
+
+    </div>
+
+</body>
+
+{% endblock %}
