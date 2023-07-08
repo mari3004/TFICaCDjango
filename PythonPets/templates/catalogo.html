@@ -2,17 +2,23 @@
 {% load static %}
 {% block content %}
 
-<body>
-    <hr>
+<body class="page">
+
+    <hr id="separador">
     <h1>Catalogo</h1>
-    <hr>
-    <div class="grid-container">
+    <hr id="separador">
+
+
+    <div class="grid-container catalogo">
+        {% for grid in catalog %}
         <div class="grid-item">
             <img class="img-producto-1" src="images/productos/puppy-small-breed.png" alt="puppy">
             <h4>EUKANUBA PUPPY SMALL BREED</h4>
             <p class="parrafo-producto">Alimento balanceado completo para cachorros de talla pequeña como Caniche, Yorkshire Terrier y otras razas o perros mestizos que en su etapa adulta pesan menos de 10kg</p>
             <button class="btn-producto-1">Agregar al carrito</button>
         </div>
+
+        {% endfor %}
         <div class="grid-item">
                 <img class="img-producto" src="images/productos/puppy medium breed.jpg" alt="puppy">
                 <h4>EUKANUBA PUPPY MEDIUM BREED</h4>

@@ -10,37 +10,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Braah+One&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/93aa3dd841.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{% static 'style.css' %}">
-    <script src="{% static '/app.js' %}"></script>
+    
 
     <title>Python Pets</title>
 </head>
 
 <header>
-    <nav> 
-        <ul>
-            <li><img id="logo" src="{% static 'images/logo.png' %}" /></li>
-            <li style="margin-right: 100px">
-                <h4>Python Pets</h4>
-            </li>
-            <li><a class="active" href="{%url 'Home'%}">Inicio</a></li>
-            <li><a href="{%url 'Nosotros'%}">Nosotros</a></li>
-            <li><a href="{%url 'Catalogo'%}">Productos</a></l>
-            <li><a href="{%url 'Contacto'%}">Contacto</a></li>
-            <li style="margin-left: 200px"><button onclick="carrito()">Carrito</button></li>
-            <li><button onclick="ingresar()">Ingresar</button>  </li>
-        </ul>
-    </nav>
+    <div class="contenedor">
+        <input type="checkbox" id="menu-check">
+        <label id="menu" for="menu-check">
+            <span id="menu-abrir">&#9776;</span>
+            <span id="menu-cerrar">X</span>
+        </label>
+        <nav> 
+            <ul>
+                <li><img id="logo" src="{% static 'images/logo.png' %}" /></li>
+                <li style="margin-right: 200px">
+                    <h4 style="margin-bottom: 45px">Python Pets</h4>
+                </li>
+                <li class="{% if 'home' in request.path %}active{% endif %}" >
+                    <a href="{%url 'Home'%}">Inicio</a></li>
+                <li class="{% if 'nosotros' in request.path %}active{% endif %}">
+                    <a href="{%url 'Nosotros'%}">Nosotros</a></li>
+                <li class="{% if 'catalogo' in request.path %}active{% endif %}" >
+                    <a href="{%url 'Catalogo'%}">Productos</a></li>
+                <li class="{% if 'contacto' in request.path %}active{% endif %}">
+                    <a href="{%url 'Contacto'%}">Contacto</a></li>
+                <li id="carrito">
+                    <button onclick="carrito()">Carrito</button></li>
+                <li>
+                    <button onclick="ingresar()">Ingresar</button>  </li>
+            </ul>
+        </nav>
+    </div>
 </header>
+
 
 {% block content %}{% endblock %}
 
 <footer> 
     <p> Copyright (c) 2023 - Todos los derechos reservados - Python Pets</p>
 </footer>
+
+<script src="{% static '/app.js' %}"></script>
 
 </html>

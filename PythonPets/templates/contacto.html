@@ -2,48 +2,31 @@
 {% load static %}
 {% block content %}
 
-<body class="contactanos">
-    <hr style="margin-top: 25px; height: 3px">
-    <h1 style="color: #fff">Contactanos</h1>
-    <hr style="height: 3px">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="well well-sm">
-                    <form class="form-horizontal" action=""method="POST" enctype="text/plain" id="formulario" >
-                
-                         <fieldset> 
-                            <div class="form-group">
-                                <span class="col-md-1 col-md-offset-2 text-center"></span>
-                                <div class="col-md-12">
-                                    <input id="nombre" name="nombre" type="text" placeholder="Nombre y Apellido" class="form-control">
-                                </div>
-                            </div>
-    
-                            <div class="form-group">
-                                <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-envelope-o bigicon"></i></span>
-                                <div class="col-md-12">
-                                    <input id="email" name="email" type="text" placeholder="Email" class="form-control">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-pencil-square-o bigicon"></i></span>
-                                <div class="col-md-12">
-                                    <textarea class="form-control" id="message" name="message" placeholder="Dejanos tu comentario y nos pondremos en contacto contigo lo antes posible" rows="7"></textarea>
-                                </div>
-                            </div>
-    
-                            <div class="form-group">
-                                <div class="col-md-12 text-center">
-                                    <button type="submit" id="boton">Enviar</button>
-                                </div>
-                            </div>
-                        </fieldset> 
-                    </form>
-                </div>
+<body class="page">
+
+    <hr id="separador">
+    <h1>Contactanos</h1>
+    <hr id="separador">
+
+    <div class="formdecontacto">
+        <form action="" method="POST" nctype="text/plain" id="contact_form">
+            <div class="name">
+                <input name="nombre" type="text" placeholder="Nombre y Apellido" id="name_input">
             </div>
-        </div>
+            <div class="email">
+                <input name="email" type="text" placeholder="Email" id="mail_input">
+            </div>
+            <div class="message">
+                <textarea id="message" name="message" placeholder="Dejanos tu comentario y nos pondremos en contacto contigo lo antes posible" rows="7"></textarea>
+            </div>
+            <div class="btnenviar">
+                <button type="submit" id="botonenviar">Enviar</button>
+            </div>
+
+        </form>
+
     </div>
+    <hr id="separador">
 </body>
 
 {% endblock %}

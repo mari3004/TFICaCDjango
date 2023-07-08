@@ -53,17 +53,17 @@ loadRandomMichis();
 
 // Validacion de Formulario
 document.addEventListener("DOMContentLoaded", function() {
-    document.getElementById("formulario").addEventListener('submit', validarFormulario); 
+    document.getElementById("contact_form").addEventListener('submit', validarFormulario); 
   });
   
   function validarFormulario(evento) {
     evento.preventDefault();
-    var nombre = document.getElementById('nombre').value;
+    var nombre = document.getElementById('name_input').value;
     if(nombre.length == 0) {
       alert('No has escrito tu nombre');
       return;
     }
-    var email = document.getElementById('email').value;
+    var email = document.getElementById('mail_input').value;
     if (email.length < 6) {
       alert('El correo no es valido');
       return;
