@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'PythonPetsApp',
+    'Ecommerce',
 ]
 
 MIDDLEWARE = [
@@ -77,8 +78,12 @@ WSGI_APPLICATION = 'PythonPets.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'bpbzggcjybfmvxtpspmn',
+        'USER': 'utfmcqh6fhk2of87' ,
+        'PASSWORD': '1GPrZyJKrejsdjHV7AN6',
+        'HOST': 'bpbzggcjybfmvxtpspmn-mysql.services.clever-cloud.com',
+        'PORT': '3306',
     }
 }
 
@@ -117,7 +122,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 MEDIA_URL = '/images/' 
 MEDIA_ROOT = os.path.join(BASE_DIR,'images')
 

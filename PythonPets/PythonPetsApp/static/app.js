@@ -74,4 +74,8 @@ document.addEventListener("DOMContentLoaded", function() {
       return;
     }
     this.submit();
+
+  }
+  function clickeo(){
+    alert('Muchas gracias por contactarte, pronto recibiras respuesta');
   }
