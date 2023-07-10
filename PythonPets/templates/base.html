@@ -32,21 +32,36 @@
                     <h4 style="margin-bottom: 45px">Python Pets</h4>
                 </li>
                 <li class="{% if 'home' in request.path %}active{% endif %}" >
-                    <a href="{%url 'Home'%}">Inicio</a></li>
+                    <a href="{% url 'Home' %}">Inicio</a></li>
                 <li class="{% if 'nosotros' in request.path %}active{% endif %}">
-                    <a href="{%url 'Nosotros'%}">Nosotros</a></li>
+                    <a href="{% url 'Nosotros' %}">Nosotros</a></li>
                 <li class="{% if 'catalogo' in request.path %}active{% endif %}" >
-                    <a href="{%url 'Catalogo'%}">Productos</a></li>
+                    <a href="{% url 'Catalogo' %}">Productos</a></li>
                 <li class="{% if 'contacto' in request.path %}active{% endif %}">
-                    <a href="{%url 'Contacto'%}">Contacto</a></li>
-                <li id="carrito">
-                    <button onclick="carrito()">Carrito</button></li>
+                    <a href="{% url 'Contacto' %}">Contacto</a></li>
+            </ul>
+            <ul>
+                {% if request.user.is_authenticated%}
+                    <li id="carrito">
+                        <a href="https://media.tenor.com/4EAKayO3n_cAAAAC/kitten-cat.gif">Carrito</a></li>
+                        <li >
+                            <a href="{% url 'ABM' %}">ABM</a></li>
+                        <li>
+                    <li>
+                        <a href="{% url 'Salir' %}">Salir</a></li>
+                {% else %}    
                 <li>
-                    <button onclick="ingresar()">Ingresar</button>  </li>
+                    <a href="{% url 'Registro' %}">Crear usuario</a>
+                </li>
+                <li>
+                    <a href="{% url 'Login' %}">Ingresar</a>
+                </li>
+                {% endif %}
             </ul>
         </nav>
     </div>
 </header>
+<hr class="separador">
 
 
 {% block content %}{% endblock %}

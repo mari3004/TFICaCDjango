@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<body class="page">
+
+    <hr id="separador">
+    <h1>Inventario</h1>
+    <hr id="separador">
+
+<section class="inventario">
+    <div style="text-align:right">
+        <button class="btn-addproducto"><a href = "{% url 'crearproducto' %}">Agregar producto</a></button>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Codigo</th>
+                <th>Producto</th>
+                <th>Seccion</th>
+                <th>Precio</th>
+                <th>Imagen</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                {% for articulo in articulos %}
+                <td>{{articulo.codigo}}</td>
+                <td>{{articulo.nombre}}</td>
+                <td>{{articulo.seccion}}</td>
+                <td>{{articulo.precio}}</td>
+                <td>
+                    <img src={{articulo.imagen.url}} height="100px" width="100px" alt="producto">
+                </td>
+                <td><button class="btn-producto"><a href = "{% url 'editarproducto' articulo.id %}">Editar</a></button></td>
+                <td><button class="btn-producto"><a href ="{% url 'eliminarproducto' articulo.id %}">Borrar</a></button></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+	</table>
+</section>
+    <hr id="separador">
+</body>
+{% endblock %}

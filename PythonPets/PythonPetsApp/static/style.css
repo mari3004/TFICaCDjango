@@ -56,20 +56,10 @@ header div.contenedor nav ul li a {
   flex-wrap: wrap;
 }
 
-#carrito {
-  margin-left: 300px;
-}
-
 nav ul li:hover {
   background: #eca023 !important;
 }
 
-nav ul li button {
-  padding: 10px;
-  background-color: transparent !important;
-  font-size: 15px;
-  border: 2px solid #f19a0d;
-}
 .page {
   background-color: #f8c471;
 }
@@ -450,7 +440,7 @@ input:hover, textarea:hover{
   text-align: center;
 }
 
-#botonenviar, .btn-producto {
+#botonenviar, .btn-producto, #botonlogin, #botonregistro, .btn-addproducto{
   padding: 25px;
   margin: 5px;
   background-color: #f8c471;
@@ -459,7 +449,7 @@ input:hover, textarea:hover{
   border-radius: 25px;
   
 }
-#botonenviar:hover, .btn-producto:hover {
+#botonenviar:hover, .btn-producto:hover, #botonlogin:hover, #botonregistro:hover, .btn-addproducto:hover {
   background: #eca023;
   transform: scale(1.2);
   cursor: pointer;
@@ -467,7 +457,7 @@ input:hover, textarea:hover{
   text-shadow: none;
 }
 @media only screen and (max-width: 780px){
-  #contact_form{
+  #contact_form, #login_form, #registro_form{
     align-items: left;
     padding: 2em 5em 5em 0;
   }
@@ -475,9 +465,52 @@ input:hover, textarea:hover{
   input, textarea{
     width: 100%;
   }
-  .btnenviar{
+  .btnenviar, .btnlogin, .btnregistro{
     width: 100%;
     text-align: center;
   }
 
+}
+/*Login*/
+.log, .registro .formproductos{
+  background-color: #f8c471;
+  text-align: center;
+  padding: 2em 15em 2em 15em;
+}
+
+.log #login_form span input, .registro #registro_form span input, .abm_form{
+  width: 50%;
+  background-color: #fff;
+  color: #828282 !important;
+  text-shadow: none;
+  border:#828282;
+  border-style: solid;
+  border-width: medium;
+  font-size: medium;
+}
+.btnlogin, .btnregistro{
+  text-align: center;
+}
+
+/*Seccion ABM*/
+.btn-addproducto{
+  background-color: grey;
+}
+
+table{
+  width: 100%;
+  display: content;
+  right: 0;
+
+}
+thead{
+  background-color: grey;
+  height: 25%;
+}
+tbody {
+  border-color: #828282;
+  width: 100%;
+}
+.formproductos{
+  text-align: center;
 }

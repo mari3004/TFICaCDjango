@@ -2,9 +2,6 @@ function carrito(){
     window.location.href = "https://media.tenor.com/4EAKayO3n_cAAAAC/kitten-cat.gif"
 }
 
-function ingresar(){
-    window.location.href = "https://media.tenor.com/l37il_hI3tEAAAAC/smilecat.gif"
-}
 
 // Uso de API
 const API_URL_RANDOM = 'https://api.thecatapi.com/v1/images/search?limit=4';
