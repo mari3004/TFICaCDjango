@@ -11,10 +11,6 @@ class Articulos(models.Model):
     # podemos crear la tabla con un nombre especifico pero se lo tenemos
     # que indicar directamente en la metaclase
 
-class Meta:
-    verbose_name = "articulo"
-    verbose_name_plural = "articulos"
-
 
     def __str__(self):
         return f"El articulo: {self.nombre}, con codigo {self.codigo} pertenece a la seccion {self.seccion} y tiene un precio de {self.precio}"
@@ -28,3 +24,6 @@ class Meta:
             (field.verbose_name, field.value_from_object(self))
             for field in self.__class__._meta.fields[1:]
         ]
+class Meta:
+    verbose_name = "articulo"
+    verbose_name_plural = "articulos"

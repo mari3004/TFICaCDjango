@@ -25,7 +25,8 @@ def crearproducto(request):
     if formulario.is_valid():
         formulario.save()
         return redirect('ABM')
-    return render(request, "inventario/crear_producto.html", {'formulario': formulario})
+    return render(request, 'inventario/crear_producto.html', {'formulario': formulario})
+
 
 def editarproducto(request, id):
     articulo = Articulos.objects.get(id=id)
@@ -36,7 +37,7 @@ def editarproducto(request, id):
     return render(request, "inventario/editar_producto.html", {'formulario': formulario})
 
 def eliminarproducto(request, id):
-    articulo = Articulos.object.get(id=id)
+    articulo = Articulos.objects.get(id=id)
     articulo.delete()
     return redirect('ABM')
 

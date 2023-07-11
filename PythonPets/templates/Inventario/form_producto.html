@@ -1,33 +1,29 @@
-<body class="page">
+<form method="POST" class="">
+    {% csrf_token %}
+    {% for campo in formulario %}
 
-   
-    <div class="formproductos">
-        <form action="" method="post" nctype="text/plain" id="abm_form">
-            {% csrf_token %}
-            {% for campo in formulario %}
+    <div>
+        <label>{{campo.label}} &nbsp; &nbsp;</label>
 
-            <div>
-                <label>{{campo.label}} &nbsp; &nbsp;</label>
-            
-            {% if campo.field.widget.input_type == 'file' and campo.value %}
-                <br>
-                <img src="{{MEDIA_URL}}/images/{{campo.value}}" width="100">
-                {% endif %}
+        {% if campo.field.widget.input_type == 'file' and campo.value %}
+        <br>
+        <img src="{{MEDIA_URL}}/productos/{{campo.value}}" width="100">
+        {% endif %}
 
-                <input
-                type = "{{campo.field.widget.input_type}}"
-                class = "abm_form"
-                name="{{campo.name}}"
-                id=""
-                placeholder="{{campo.label}}"
-                value="{{ campo.value | default:'' }}"/>
-            </div>        
-            <div>
-                <p>{{campo.error}}</p>
-            </div>
+        <input 
+            type="{{campo.field.widget.input_type}}" 
+            class="abm_form" 
+            name="{{campo.name}}" 
+            id=""
+            placeholder="{{campo.label}}" 
+            value="{{ campo.value | default:'' }}" />
+    </div>
+    <div>
+        <p>{{campo.error}}</p>
+    </div>
 
-            {% endfor %}
-            <div class="btnlogin">
-                <input type="submit" id="botonlogin" value="Enviar">
-            </div>
-</body>
+    {% endfor %}
+    <div class="btnlogin">
+        <button type="submit" id="botonlogin" value="Enviar"> Enviar </button>
+    </div>
+</form>
