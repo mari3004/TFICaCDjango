@@ -75,7 +75,7 @@ WSGI_APPLICATION = 'PythonPets.wsgi.application'
 USUARIO_PYTHON_ANYWHERE     = "mari3004"
 PASSWORD_MYSQL              = "pythonpets1234"
 MYSQL_PYTHON_ANYWHERE_HOST  = USUARIO_PYTHON_ANYWHERE+".mysql.pythonanywhere-services.com"
-MYSQL_DATABASE              = USUARIO_PYTHON_ANYWHERE+"$pythonpets"
+MYSQL_DATABASE              = USUARIO_PYTHON_ANYWHERE+"$mari3004$default"
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
