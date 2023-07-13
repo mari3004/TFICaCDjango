@@ -72,6 +72,10 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'PythonPets.wsgi.application'
 
+USUARIO_PYTHON_ANYWHERE     = "mari3004"
+PASSWORD_MYSQL              = "pythonpets1234"
+MYSQL_PYTHON_ANYWHERE_HOST  = USUARIO_PYTHON_ANYWHERE+".mysql.pythonanywhere-services.com"
+MYSQL_DATABASE              = USUARIO_PYTHON_ANYWHERE+"$pythonpets"
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
@@ -79,13 +83,15 @@ WSGI_APPLICATION = 'PythonPets.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'bpbzggcjybfmvxtpspmn',
-        'USER': 'utfmcqh6fhk2of87' ,
-        'PASSWORD': '1GPrZyJKrejsdjHV7AN6',
-        'HOST': 'bpbzggcjybfmvxtpspmn-mysql.services.clever-cloud.com',
+        'NAME': MYSQL_DATABASE , 
+        'USER': USUARIO_PYTHON_ANYWHERE,
+        'PASSWORD': PASSWORD_MYSQL,
+        'HOST': MYSQL_PYTHON_ANYWHERE_HOST,
         'PORT': '3306',
+        'OPTIONS': {'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"},
     }
 }
+
 
 
 # Password validation
