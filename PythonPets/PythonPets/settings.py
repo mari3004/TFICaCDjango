@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-mh&k*h64uoas#49cytful3ve)tcn(8o!n$3_e3aw4dl50jdgsw
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = [] #"mari3004.pythonanywhere.com"
+ALLOWED_HOSTS = ["mari3004.pythonanywhere.com"]
 
 
 # Application definition
@@ -72,6 +72,10 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'PythonPets.wsgi.application'
 
+USUARIO_PYTHON_ANYWHERE     = "mari3004"
+PASSWORD_MYSQL              = "pythonpets1234"
+MYSQL_PYTHON_ANYWHERE_HOST  = USUARIO_PYTHON_ANYWHERE+".mysql.pythonanywhere-services.com"
+MYSQL_DATABASE              = USUARIO_PYTHON_ANYWHERE+"$PythonPets"
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
